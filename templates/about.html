@@ -1,0 +1,282 @@
+{% load static %}
+
+ <!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shorcut icon" href="imgs/header-img.jpg">
+  <title>iFraganus Academy</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="{% static './bootstrap.css' %}">
+  <!-- bootstrap end -->
+  <!-- slider.css -->
+  <link rel="stylesheet" href="{% static './style/swiper-bundle.min (1).css' %}">
+  <!-- style.css -->
+  <link rel="stylesheet" href="{% static './style/style.css' %}">
+  <!-- style.css end -->
+  <!-- font awsome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- font awsome end -->
+</head>
+<body class="bg-dark">
+  <div class="active-container">
+    <header>
+      <div class="navbar-1 position-fixed">
+        <div class="container">
+          <nav class="navbar navbar-dark ">
+            <div class="container">
+              <a class="navbar-brand d-flex align-items-center gap-3" href="{% url 'index' %}">
+                <div class="col-6"><img class="img-1" src="{% static './imgs/sa-transformed (2).png' %}" alt=""></div>
+                  </a>
+                  <div class="col-7 navigation d-flex justify-content-end gap-4  d-xl-flex d-none">
+                    <a class="text-decoration-none animate-1 " href="{% url 'about' %}">Biz Haqimizda</a>
+                    <a class="text-decoration-none animate-1 " href="">Bizning jamoa</a>
+                    <a class="text-decoration-none animate-1 " href="">Kurslar</a>
+                  </div>
+                  <div class="col-2 d-flex justify-content-end d-xl-flex d-none">
+                    <a class="text-decoration-none" href=""><div class="button-1s d-flex align-items-center justify-content-center">
+                      Kirish
+                    </div></a>
+                  </div>
+              <button class=" bg-black navbar-toggler d-xl-none d-flex" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon bg-black"></span>
+              </button>
+              <div class="offcanvas bg-white offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><img class="img-1" src="{% static './imgs/sa-transformed (2).png' %}" alt=""></h5>
+                  <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item"><a class="nav-link text-decoration-none text-black" href="">Biz Haqimizda</a></li>
+                    <li class="nav-item"><a class="nav-link text-decoration-none text-black" href="">Bizning jamoa</a></li>
+                    <li class="nav-item"><a class="nav-link text-decoration-none text-black" href="">Kurslar</a></li>
+                    <li class=" d-flex justify-content-start mt-3 ">
+                      <a class="text-decoration-none" href=""><div class="button d-flex align-items-center justify-content-center">
+                        Login
+                      </div></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+
+  <!-- Topbar Start -->
+        <div class="row gx-5 py-3 align-items-center">
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+        <h1 class="m-0 display-4 text-grey"><span class="text-grey">iFraganus</span></h1>
+        </div>
+  <!-- Topbar End -->
+
+          <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                {% for Aboutus in aboutus %}
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-90 h-100" src="{{Aboutus.img.url}}" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg text-start color-1">Biz Haqimizda</h6>
+                    <h1 class="text mb-4"></h1>
+                    <h5 class="color-1 mb-4">{{Aboutus.bio}}</h5>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <h5 class="text">Bizning Kurslar :</h5>
+                        <div class="col-sm-6">
+                            <p class="text-white"><i class="fa fa-arrow-right text-white me-2"></i>IT</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="text-white"><i class="fa fa-arrow-right text-white me-2"></i>Back-End</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="text-white"><i class="fa fa-arrow-right text-white me-2"></i>Front-End</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="text-white"><i class="fa fa-arrow-right text-white me-2"></i>SMM</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="text-white"><i class="fa fa-arrow-right text-white me-2"></i>IELTS</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="text-white"><i class="fa fa-arrow-right text-white me-2"></i>Matematika</p>
+                        </div>
+                    </div>
+                     <a class="text-decoration-none" href=""><div class="button d-flex align-items-center justify-content-center">Read More
+                      </div></a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div><br><br>
+    <!-- About End -->
+
+<!--    &lt;!&ndash; Navbar Start &ndash;&gt;-->
+<!--                <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">-->
+<!--                    <input type="text" class="form-control border-0" placeholder="Keyword">-->
+<!--                    <div class="input-group-append">-->
+<!--                        <button class="input-group-text bg-primary text-dark border-0 px-3"><i-->
+<!--                                class="fa fa-search"></i></button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--    &lt;!&ndash; Navbar End &ndash;&gt;-->
+
+
+    <!-- News With Sidebar Start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="title">
+                                <h2 class="mb-4 text font-weight-bold">iFraganus yangiliklari</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-11">
+                            <div class="position-relative mb-3">
+                                <div class="bg-grey border border-top-1 p-4">
+                                    <div class="mb-2">
+                    <div class="mb-5">
+                        <div class="section mb-3">
+                            <h4 class="color-1">Imkoniyatlar:</h4>
+                        </div>
+                        <div class="p-2">
+                            {% for News in news %}
+                            <div class="d-flex align-items-center bg-black mb-3" style="height: 120px;">
+                                <img class="img-fluid" style="width:110px;height:110px;" src="{{News.img.url}}" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="color-1 font-weight-semi-bold p-1 mr-2" href="">iFraganus</a>
+                                        <a class="text-white" href=""><small>{{News.date}}</small></a>
+                                    </div>
+                                    <a class="text" href="">{{News.name}}</a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- Popular News End -->
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between bg-white p-3">
+                                    <div class=" color-1 d-flex align-items-center">
+                                        <small>iFraganus IT & Kids Academy</small>
+                                    </div>
+                                    <div>
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>123 </small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    <!-- News With Sidebar End -->
+                <div class="col-lg-4">
+                    <!-- Social Follow Start -->
+                    <div class="mb-3">
+                        <div class=" mb-5">
+                        </div>
+                        <div class="bg  ">
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #39569E;">
+                                <i class="fab fa-facebook-f text-center py-4 mr-2" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Fans</span>
+                            </a>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #52AAF4;">
+                                <i class="fab fa-twitter text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Followers</span>
+                            </a>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #0185AE;">
+                                <i class="fab fa-linkedin-in text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Connects</span>
+                            </a>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #C8359D;">
+                                <i class="fab fa-instagram text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Followers</span>
+                            </a>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #DC472E;">
+                                <i class="fab fa-youtube text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Subscribers</span>
+                            </a>
+                            <a href="" class="d-block w-100 text-white text-decoration-none" style="background: #055570;">
+                                <i class="fab fa-vimeo-v text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Followers</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Social Follow End -->
+
+                    <!-- Ads Start -->
+                    <div class="mb-3">
+                            <h4 class="m-0 text-uppercase font-weight-bold">iFraganus</h4>
+                        </div>
+                        <div class="bg-black text-center border border-top-1 p-1">
+                            <a href=""><img class="img-fluid" src="{% static './imgs/iFraganus-academy.png.jpg' %}" alt=""></a>
+                        </div>
+                    </div>
+            </div>
+                    <!-- Ads End -->
+
+
+
+
+  <div class="futter mt-5">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-xl-4 col-md-5  justify-content-xl-between justify-content-center ">
+          <img class="img-1" src="{% static './imgs/sa-transformed (2).png' %}" alt="">
+        </div>
+        <div class="col-xl-4 col-md-5 col-sm-11 justify-content-xl-start justify-content-md-start justify-content-center d-flex mt-4 gap-4">
+          <a href=""><i class="fa-brands fs-4 color fa-youtube"></i></a>
+          <a href=""><i class="fa-brands fs-4 color fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fs-4 color fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fs-4 color fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="line mt-4"></div>
+      <div class="row d-xl-flex mt-4 justify-content-center">
+        <div class="col-xl-4  col-md-5 col-10 flex-column d-flex gap-3">
+          <h5 class="color">Universitet haqida</h5>
+          <a class="text-decoration-none color-1"  href="">Biz haqimizda</a>
+          <a class="text-decoration-none color-1"  href="">Yangiliklar</a>
+          <a class="text-decoration-none color-1"  href="">Hamkorlar</a>
+          <a class="text-decoration-none color-1"  href="">Bizning jamoa</a>
+          <a class="text-decoration-none color-1"  href="">Elektron platforma</a>
+        </div>
+        <div class="col-xl-4  col-md-5 col-10 flex-column d-flex gap-3">
+          <h5 class="color">Ota-onalar uchun</h5>
+          <a class="text-decoration-none color-1" href="">Yonalishlar</a>
+          <a class="text-decoration-none color-1" href="">Savol-javoblar</a>
+          <a class="text-decoration-none color-1" href="">Shartnoma olish</a>
+        </div>
+        <div class="col-xl-4  col-md-5 col-10 flex-column d-flex gap-3">
+          <h5 class="color">
+            Bolalar uchun
+          </h5>
+          <a class="text-decoration-none color-1" href="">Kurslar</a>
+          <a class="text-decoration-none color-1" href="">Bizning jamoa</a>
+
+        </div>
+      </div>
+      <div class="line mt-4"></div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+   </body>
+<script src="{% static './bootstrap.bundle.min.js' %}"></script>
+<script src="{% static './js/swiper-bundle.min (1).js' %}"></script>
+<script src="{% static './js/main.js' %}"></script>
+</html>
